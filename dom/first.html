@@ -12,8 +12,58 @@
 </head>
 <body class="bodyclass">
     <div>
-        <h1 class="headingclass" id="headingid">Learning DOM from chai aur code. date is 23/05/24 and location is Bilaspur.</h1>
+        <h1 class="headingclass" id="headingid">Learning DOM from chai aur code. date is 23/05/24 and location is Bilaspur <span style="display:none"> test text</span>.</h1>
         <p>Lorem ipsum dolor sit amet consectetur</p>
     </div>
 </body>
 </html>
+
+<!-- 
+open it in live server and then go to console : 
+
+console.log(document.getElementById('headingid'));
+//selects whole element having id 'headingid'.
+
+console.log(document.getElementById('headingid').id);
+VM1013:1 headingid
+
+console.log(document.getElementById('headingid').class);
+VM1379:1 undefined
+
+console.log(document.getElementById('headingid').className);
+VM1404:1 headingclass
+
+document.getElementById('headingid').getAttribute('id')
+'headingid'
+
+document.getElementById('headingid').getAttribute('class')
+'headingclass'
+
+document.getElementById('headingid').setAttribute('class','newheadingclass')
+undefined
+document.getElementById('headingid').className
+'newheadingclass'
+
+
+
+const title = document.getElementById('headingid');
+
+title.style.backgroundColor = 'blue';
+'blue'
+
+title.style.borderRadius = '15px';
+'15px'
+
+
+
+title.textContent
+'Learning DOM from chai aur code. date is 23/05/24 and location is Bilaspur.'
+
+title.innerHTML
+'Learning DOM from chai aur code. date is 23/05/24 and location is Bilaspur.'
+
+title.innerText
+'Learning DOM from chai aur code. date is 23/05/24 and location is Bilaspur.'
+
+
+-->
