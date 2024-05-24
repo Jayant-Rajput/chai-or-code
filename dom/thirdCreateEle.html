@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color:white">
+    
+</body>
+<script>
+    const newdiv = document.createElement('div');
+    console.log(newdiv);
+    newdiv.className = "divclass";
+    newdiv.id = "divid";
+    newdiv.setAttribute("title","newtitle");
+    newdiv.style.backgroundColor = "green";
+    // newdiv.innerText = "It's created using JS";   // we can either do this or write the following two lines.
+    const addText = document.createTextNode("It's created using JS");
+    newdiv.appendChild(addText);
+
+    document.body.appendChild(newdiv);   //without this line we won't see the element we created in the webpage.
+</script>
+</html>
