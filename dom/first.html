@@ -98,4 +98,21 @@ undefined
 
 
 
+const li_list = document.getElementsByClassName('ListItem');
+undefined
+li_list          // it gives htmlCollection, it's different from nodelist.we can't use forEach to iterate it.
+
+const arr = Array.from(li_list);
+undefined
+
+arr
+(4) [li.ListItem, li.ListItem, li.ListItem, li.ListItem]
+
+for(let i=0;i<arr.length;i++){
+    arr[i].style.color = 'orange'
+}
+'orange'
+
+
+
 -->
