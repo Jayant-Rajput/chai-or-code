@@ -19,9 +19,10 @@
         <p>Lorem ipsum dolor sit amet consectetur</p>
 
         <ul>
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
+            <li class="ListItem">one</li>
+            <li class="ListItem">two</li>
+            <li class="ListItem">three</li>
+            <li class="ListItem">four</li>
         </ul>
     </div>
 </body>
@@ -77,6 +78,24 @@ title.innerText
 document.querySelector('.headingclass')
 
 document.querySelector('#headingid')
+
+
+const myUl = document.querySelector('ul');
+undefined
+
+myUl.querySelector('li').style.backgroundColor = 'green';
+'green'
+
+document.querySelectorAll('li');   //it will select all li, and create a nodelist of all li, it's arraylike structure.
+
+const LiList = document.querySelectorAll('li');
+
+LiList[1].style.color = 'yellow';
+'yellow'
+
+LiList.forEach(function(l){l.style.backgroundColor = 'green'});
+undefined
+
 
 
 -->
