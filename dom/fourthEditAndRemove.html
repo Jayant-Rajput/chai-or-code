@@ -29,8 +29,17 @@
     
     addLangOpti("python");
 
-    const secondLang = document.querySelector('li : nth-child(2)');
+    const secondLang = document.querySelector("li:nth-child(2)");
     console.log(secondLang);
+    // secondLang.innerHTML = "C#";
+    // another good way to change : 
+    const newLang = document.createElement('li');
+    newLang.textContent = "C#";
+    secondLang.replaceWith(newLang);
+
+    //remove : 
+    const lastele = document.querySelector("li:last-child");
+    lastele.remove();
     
 </script>
 </html>
