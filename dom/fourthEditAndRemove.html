@@ -12,12 +12,25 @@
 <script>
     function addLang(language){
         const newlang = document.createElement('li');
-        newlang.innerHTML = ${language};
+        newlang.innerHTML = `${language}`;
         document.querySelector('.ulclass').appendChild(newlang);
     }
 
     addLang("C++");
     addLang("Java");
+    
+    //better way (optimised) to for addLang function : 
+
+    function addLangOpti(language){
+        const newlang = document.createElement('li');
+        newlang.appendChild(document.createTextNode(language));
+        document.querySelector('.ulclass').appendChild(newlang);
+    }
+    
+    addLangOpti("python");
+
+    const secondLang = document.querySelector('li : nth-child(2)');
+    console.log(secondLang);
     
 </script>
 </html>
