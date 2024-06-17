@@ -7,14 +7,16 @@
 </head>
 <body>
     <h1>You need to see console.</h1>
-    <buttton>click to stop printing in console</buttton>
+    <button>click to stop printing in console</button>
 </body>
-<scipt>
-    const printmsg = function(){
-        console.log('NIT Raipur')
+<script>
+    const printmsg = function(para){
+        console.log(`${para}, NIT Raipur`)
     }
-    setInterval(printmsg,1000);  //in each 1000ms ie 1s it will execute the printmsg function.
+    const refre = setInterval(printmsg,1000,'hii');  //in each 1000ms ie 1s it will execute the printmsg function.
 
-    document.query
-</scipt>
+    document.querySelector('button').addEventListener('click', (e) => {
+        clearInterval(refre);
+    })
+</script>
 </html>
