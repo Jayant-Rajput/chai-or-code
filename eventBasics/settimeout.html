@@ -10,8 +10,30 @@
     <button>click me</button>
 </body>
 <script>
-    setTimeOut(function(){
+    setTimeout(function(){          //it's used to execute the function after some time given as second parameter of this fn.
         console.log('its printing after 2000ms ie. 2 second');
     }, 2000);
+
+
+    // we don't need to writed the fn inside it we can use refrence of the function too : 
+    
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = 'Dated : 17-06-2024';
+    }
+    const refre = setTimeout(changeText,5000);     // will execute the changeText function after 5 second.
+
+
+
+    // if we want to stop that setTimeout fn, we use clearTimeout fn which takes the refrence of the setTimeout fn.
+
+    // clearTimeout(refre);   if we use it like this, then our setTimeout whose refrence is refre won't execute even after 5 second.
+    // as it has been stopped.
+
+    // so let's use it in btn:
+
+    document.querySelector('button').addEventListener('click', (e) => {
+        clearTimeout(refre);     //due to this if you click the btn before 5 second the setTimeout with refrence refre won't work.
+        console.log('STOPPED');
+    })
 </script>
 </html>
