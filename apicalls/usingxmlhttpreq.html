@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    <div>
+        <h1 id="headingid">No Data</h1>
+        <button onclick="showcard()">Get Data</button>
+    </div>
+</body>
+<script>
+    
+    const requesturl = 'https://api.github.com/users/Jayant-Rajput';
+    const obj = new XMLHttpRequest();
+    obj.open('GET',requesturl);
+
+    console.log("If it's printing in console, everything is fine till here.");
+
+    let responsefromapi;       //i declared this outside so that the response can be used here out of the scope of below section.
+
+    obj.onreadystatechange = function() {
+        console.log(obj.readyState);     
+                                            /* resource : https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+                                            0	UNSENT	Client has been created. open() not called yet.
+1	                                        1   OPENED	open() has been called.
+2	                                        2   HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	                                        3   LOADING	Downloading; responseText holds partial data.
+4	                                        4   DONE  */
+        if(obj.readyState===4){
+            responsefromapi = this.responseText;
+            console.log(typeof responsefromapi);
+            //it's in string form, we will convert it into jason form for ease of getting values from this.
+            responsefromapi = JSON.parse(responsefromapi);
+            console.log(responsefromapi);
+
+            console.log("let's see no. of following : " + responsefromapi.following);
+        }
+    }
+
+    obj.send();
+    
+
+    function showcard(){
+        document.getElementById('headingid').innerHTML = 'No. of following in Github of ' + responsefromapi.login + ' is ' + responsefromapi.following;
+    }
+    
+
+</script>
+
+</html>
